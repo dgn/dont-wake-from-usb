@@ -1,0 +1,11 @@
+[Unit]
+Description=Disable wake-from-usb before sleep
+Before=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dont-wake-from-usb.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=suspend.target
